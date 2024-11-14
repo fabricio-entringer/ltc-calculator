@@ -33,7 +33,7 @@ if x_input == '?':
     x0 = 0  # Initial point for the Newton-Raphson method
     root = newton_raphson(a, b, c, d, x0)
     if root is not None:
-        print(f"The value of X that makes f(x) = 0 is: {root}")
+        print("The value of X that makes f(x) = 0 is: %s" % root)
     else:
         print("It was not possible to find a root.")
 else:
@@ -42,14 +42,15 @@ else:
     f_x = calculate_fx(a, b, c, d, x)
 
     # Display the complete formula
-    print(f"The formula is: f(x) = {a}*x^3 - {b}*x^2 - {c}*x + {d}")
+    print("The formula is: f(x) = {}*x^3 - {}*x^2 - {}*x + {}".format(a, b, c, d))
 
     # Explain the calculation step by step
-    print("Calculating step by step:")
-    print(f"{a} * ({x}^3) = {a * x**3}")
-    print(f"+ {b} * ({x}^2) = {-b * x**2}")
-    print(f"+ {c} * {x} = {-c * x}")
-    print(f"+ {d} = {d}")
+    print("**************************")
+    print("{} * ({}^3) = {}".format(a, x, a * x**3))
+    print("+ {} * ({}^2) = {}".format(b, x, -b * x**2))
+    print("+ {} * {} = {}".format(c, x, -c * x))
+    print("+ {} = {}".format(d, d))
+    print(" ")
 
     # Show the result of the calculation
-    print(f"The value of f(x) is: {f_x}")
+    print("The value of f(x) is: {}".format(f_x))
