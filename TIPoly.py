@@ -26,7 +26,7 @@ a = float(input("Enter the value of A: "))
 b = float(input("Enter the value of B: "))
 c = float(input("Enter the value of C: "))
 d = float(input("Enter the value of D: "))
-x_input = input("Enter the value of X (or ? to find the value that zeros the function): ")
+x_input = input("Enter the value of X (or ? to find the value that zeros): ")
 
 if x_input == '?':
     # Try to find a root of the cubic equation
