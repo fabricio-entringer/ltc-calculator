@@ -14,6 +14,8 @@ This repository contains a comprehensive collection of Lifetime Control (LTC) fo
 - `main.py`: Main script that demonstrates the usage of LTC formulas with practical examples
 - `polynomial.py`: Contains sophisticated polynomial models and algorithms for LTC calculations optimized for TI calculators, including curve-fitting functions
 - `utils.py`: Comprehensive utility functions to support the calculator operations, data validation, and formula implementations
+- `test_main.py`, `test_polynomial.py`, `test_utils.py`: Unit tests for verifying correctness of the implementation
+- `run_tests.py`: Script to run all tests at once
 - `LICENSE`: License information for this project with usage terms
 - `README.md`: This detailed documentation file
 
@@ -43,19 +45,61 @@ The formulas can be accessed through the Python app on your TI-84 Calculator. Th
 - Option to save results for later use
 - Compatible with TI-84 graphing capabilities
 
-### Example
+## Testing
+The code includes a comprehensive test suite to ensure reliable operation. To run the tests:
+
+### Prerequisites
+- Python 3.x installed on your computer
+- `sympy` library installed (run `pip install sympy` if not already installed)
+
+### Running All Tests
+You can run all tests at once using the provided test runner script:
+
+```bash
+# Method 1: Using the executable script
+./run_tests.py
+
+# Method 2: Using Python directly
+python run_tests.py
+```
+
+### Running Individual Tests
+You can also run tests for specific modules:
+
+```bash
+# Test the polynomial functions
+python -m unittest test_polynomial.py
+
+# Test the utility functions
+python -m unittest test_utils.py
+
+# Test the main script
+python -m unittest test_main.py
+```
+
+### Test Coverage
+The test suite covers:
+- Core polynomial calculations
+- Root-finding algorithms
+- Utility functions
+- Script operation with various inputs
+
+## Example
 ```python
 # Example calculation using the LTC polynomial functions
-from polynomial import calc_polynomial
-from utils import format_result
+from polynomial import calculate_fx
+from utils import clear_console
 
 # Define polynomial coefficients
-coeffs = [3.5, 2.1, -0.5, 0.02]  # Example coefficients
-x_value = 2.5                    # Input value
+a = 3.5    # Coefficient of x^3
+b = 2.1    # Coefficient of x^2
+c = -0.5   # Coefficient of x
+d = 0.02   # Constant term
+x_value = 2.5
 
 # Calculate polynomial result
-result = calc_polynomial(coeffs, x_value)
+result = calculate_fx(a, b, c, d, x_value)
 
-# Display formatted result
-print(format_result(result, 4))  # Shows result with 4 decimal places
+# Display result
+print(f"f({x_value}) = {result:.4f}")
 ```
