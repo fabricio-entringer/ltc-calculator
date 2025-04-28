@@ -11,9 +11,9 @@ This repository contains a comprehensive collection of Lifetime Control (LTC) fo
 - **Portable Solution**: Carry sophisticated calculation power wherever you go
 
 ## Files and Structure
-- `first.py`: Main script that demonstrates the usage of LTC formulas with practical examples
-- `TIPoly.py`: Contains sophisticated polynomial models and algorithms for LTC calculations optimized for TI calculators, including curve-fitting functions
-- `ultils.py`: Comprehensive utility functions to support the calculator operations, data validation, and formula implementations
+- `main.py`: Main script that demonstrates the usage of LTC formulas with practical examples
+- `polynomial.py`: Contains sophisticated polynomial models and algorithms for LTC calculations optimized for TI calculators, including curve-fitting functions
+- `utils.py`: Comprehensive utility functions to support the calculator operations, data validation, and formula implementations
 - `LICENSE`: License information for this project with usage terms
 - `README.md`: This detailed documentation file
 
@@ -29,12 +29,12 @@ To use these formulas on your TI-84 Calculator Python Edition:
 1. Connect your TI-84 Calculator to your computer using the USB cable
 2. Install the TI Connect™ CE software if you haven't already (available from the [Texas Instruments website](https://education.ti.com/en/products/computer-software/ti-connect-ce-sw))
 3. Open TI Connect™ CE and select "Calculator Explorer"
-4. Transfer all the Python files (`first.py`, `TIPoly.py`, `ultils.py`) to your calculator
+4. Transfer all the Python files (`main.py`, `polynomial.py`, `utils.py`) to your calculator
 5. Disconnect your calculator and open the Python app (press [prgm] and select Python)
-6. Select the `first.py` program to run the main interface
+6. Select the `main.py` program to run the main interface
 
 ## Usage
-The formulas can be accessed through the Python app on your TI-84 Calculator. The `first.py` file provides a user-friendly interface to access all implemented formulas.
+The formulas can be accessed through the Python app on your TI-84 Calculator. The `main.py` file provides a user-friendly interface to access all implemented formulas.
 
 ### Key Features
 - Formula selection menu
@@ -46,8 +46,8 @@ The formulas can be accessed through the Python app on your TI-84 Calculator. Th
 ### Example
 ```python
 # Example calculation using the LTC polynomial functions
-from TIPoly import calc_polynomial
-from ultils import format_result
+from polynomial import calc_polynomial
+from utils import format_result
 
 # Define polynomial coefficients
 coeffs = [3.5, 2.1, -0.5, 0.02]  # Example coefficients
@@ -58,3 +58,4 @@ result = calc_polynomial(coeffs, x_value)
 
 # Display formatted result
 print(format_result(result, 4))  # Shows result with 4 decimal places
+```

@@ -1,5 +1,5 @@
 from sympy import symbols, Eq, solve
-from ultils import clear_console
+from utils import clear_console
 
 clear_console();
 
@@ -49,4 +49,3 @@ else:
     # Show the result of the calculation
     print(f"The value if f(x) is: {f_x}")
 
- 
